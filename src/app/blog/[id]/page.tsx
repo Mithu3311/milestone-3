@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { blogs } from "@/app/blogs";
-import Comments from "@/app/comments/Comments";
+import Comments from "@/app/comments/comments";
+
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({ id: blog.id }));
