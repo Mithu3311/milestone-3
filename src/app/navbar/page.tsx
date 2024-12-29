@@ -1,17 +1,16 @@
 'use client'
-
-import { Button } from '../../components/ui/button'; // Import Button from Shadcn
+import { Button } from '../../components/ui/button';
 import Link from 'next/link';
 
 export default function Navbar() {
   return (
     <nav className="bg-orange-500 p-4 flex items-center justify-between">
-      {/* Logo */}
+
       <div className="text-white text-2xl font-bold">
         Dynamic Blog By Mithu
       </div>
 
-      {/* Navbar Links */}
+
       <div className="space-x-4">
         <Link href="/">
           <Button variant="link" className="text-white hover:text-gray-200">
