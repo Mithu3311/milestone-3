@@ -2,7 +2,6 @@
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'next/navigation';  // Use useParams from next/navigation
 import { posts } from '@/app/data/posts';
-import Comments from '@/app/comments/page';
 
 export default function PostPage() {
   const { id } = useParams(); // Access the dynamic route parameter
@@ -31,7 +30,29 @@ export default function PostPage() {
     <div className="max-w-2xl mx-auto p-6">
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
       <p className="mb-6 text-justify">{post.content}</p>
-      <Comments/>
+
+      <div>
+        <h3 className="text-2xl font-semibold mb-2">Comments</h3>
+        <ul className="space-y-4">
+          {comments.map((comment, index) => (
+            <li key={index} className="border p-2 rounded-md">
+              {comment}
+            </li>
+          ))}
+        </ul>
+        <textarea
+          className="mt-4 w-full p-2 border rounded-md"
+          value={newComment}
+          onChange={handleChangeComment}
+          placeholder="Add a comment..."
+        />
+        <button
+          onClick={handleAddComment}
+          className="mt-2 p-2 bg-orange-500 text-white rounded-md"
+        >
+          Add Comment
+        </button>
+      </div>
     </div>
   );
 }
