@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ id: blog.id }));
 }
 
-const BlogPost = ({ params }: { params: { id: string } }) => {
+const BlogPost = ({ params }: { params: { id: any } }) => {
   const blog = blogs.find((b) => b.id === String(params.id)); // Ensure ID is string
 
   if (!blog) {
