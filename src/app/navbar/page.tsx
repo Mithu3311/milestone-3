@@ -8,12 +8,12 @@ export default function Navbar() {
 
   return (
     <nav className="bg-orange-500 p-4 flex items-center justify-between">
-      {/* Logo */}
+
       <div className="text-white text-2xl font-bold">
         Dynamic Blog By Mithu
       </div>
 
-      {/* Navbar Links */}
+
       <div className="hidden md:flex space-x-4">
         <Link href="/">
           <Button variant="link" className="text-white hover:text-gray-200">
@@ -31,8 +31,6 @@ export default function Navbar() {
           </Button>
         </Link>
       </div>
-
-      {/* Hamburger Menu */}
       <div className="md:hidden">
         <button
           className="text-white focus:outline-none"
@@ -42,7 +40,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-orange-500 p-4 flex flex-col space-y-4 md:hidden">
           <Link href="/" onClick={() => setIsMenuOpen(false)}>
