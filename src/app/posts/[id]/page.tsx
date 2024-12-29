@@ -1,7 +1,7 @@
 'use client'
 import { useState, ChangeEvent } from 'react';
 import { useParams } from 'next/navigation';  // Use useParams from next/navigation
-import { posts, Post } from '@/app/data/posts';
+import { posts } from '@/app/data/posts';
 
 export default function PostPage() {
   const { id } = useParams(); // Access the dynamic route parameter
